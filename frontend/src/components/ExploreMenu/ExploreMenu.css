@@ -5,13 +5,18 @@
 }
 
 .explore-menu h1{
+    
     color: #262626;
     font-weight: 500;
+    display: flex;
+    justify-content: center;
 }
 
 .explore-menu-text{
-    max-width: 60%;
+    max-width: 100%;
     color: #808080;
+    display: flex;
+    justify-content: center;
 }
 
 .explore-menu-list{
