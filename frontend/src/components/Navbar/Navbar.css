@@ -7,7 +7,10 @@
 }
 
 .navbar .logo {
-    width: 80px;
+    display: flex;
+    align-items: center;
+    padding: 10px -40px;
+    min-width:100px ;
     
 }
 .navbar-menu{
@@ -50,12 +53,20 @@
     position: relative;
 }
 
-.navbar-search-icon .dot{
-    position: absolute;
-    min-width: 10px;
-    min-height: 10px;
+
+
+.navbar-basket-icon img{
+    width: 40px;
+    height: 35px;
+    display: block;
+}
+
+.navbar-basket-icon .dot{
+    position: relative;
+    width: 10px;
+    height: 10px;
     background-color: tomato;
-    border-radius: 5px;
-    top: -8px;
-    right: -8px;
+    border-radius: 50%;
+    top: -30px;
+    right: -30px;
 }
