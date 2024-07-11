@@ -22,7 +22,7 @@
 .food-item:hover {
     transform: scale(1.05); 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    background-color: orange; 
+    background-color: lightsalmon; 
     transition-delay: 5ms;
 }
 
@@ -54,14 +54,28 @@
     margin: 10px 0px;
 }
 
-.food-item-counter {
+.food-item-img-container{
+    position: relative;
+}
+
+.food-item-img-container .add{
+    width: 35px;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    cursor: pointer;
+    border-radius: 15%;
+}
+
+
+ .food-item-counter {
     display: flex;
     background-color: white;
     justify-content: space-between;
     align-items: center;
     margin: 10px 90px;
     border-radius: 45px;
-}
+} 
 .food-item-trash{
     display: flex;
     justify-content: space-evenly;

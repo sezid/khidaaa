@@ -1,36 +1,41 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import './FoodItem.css'
 import { assets } from '../../assets/assets'
+import { StoreContext } from '../../context/StoreContext';
 
 const FoodItem = ({id,name,price,description,image}) => {
 
-    const [itemCount,setItemCount]=useState(0);
+    // const [itemCount,setItemCount]=useState(0);
+    const {cartItems,addToCart,removeFromCart,deleteFromCart} = useContext(StoreContext)
 
   return (
+    
     <div className='food-item'>
          
             <div className="food-item-img-container">
                 <img className= 'food-item-image' src={image} alt="" />
                 {
-                    !itemCount
-                    ?<img className='add' onClick={()=>setItemCount(prev=>prev+1)} src={assets.add_icon_white}/>
+                    !cartItems[id]
+                    ?<img className='add' onClick={()=>addToCart(id)} src={assets.add_icon_white}/>
                     :<div className='food-item-counter'>
-                        <img  onClick={()=>setItemCount(prev=>prev-1)} src={assets.remove_icon_red} alt="" />
-                        <p >{itemCount}</p>
-                        <img onClick={()=>setItemCount(prev=>prev+1)} src={assets.add_icon_green} alt="" />
+                        <img  onClick={()=>removeFromCart(id)} src={assets.remove_icon_red} alt="" />
+                        <p >{cartItems[id]}</p>
+                        <img onClick={()=>addToCart(id)} src={assets.add_icon_green} alt="" />
                         
                     </div>
                     
                 }
 
                 {
-                    !itemCount
-                    ?<img className='delete' onClick={()=>setItemCount(prev=>prev+1)} src=""/>
+                    !cartItems[id]
+                    ?<img className='delete' onClick={()=>addToCart(id)} src=""/>
                     :<div className='food-item-trash'>
-                        <img onClick={()=>setItemCount(0)} src={assets.trash} alt="" />
+                        <img onClick={()=>deleteFromCart(id)} src={assets.trash} alt="" />
                     </div>
                     
                 }
+
+               
 
             </div>
             <div className='food-item-info'>
@@ -41,7 +46,9 @@ const FoodItem = ({id,name,price,description,image}) => {
                 <p className="food-item-desc">{description}</p> 
                 <p className="food-item-price">${price}</p>
             </div>
-       
+    
+    
+     
     </div>
   )
 }
