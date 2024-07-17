@@ -6,6 +6,7 @@ export const StoreContext =createContext(null);
 const StoreContextProvider = (props) =>{
 
     const [cartItems, setCartItems]=useState({});
+    const [darkMode,setDarkMode]=useState(false);
 
     const addToCart=(itemId)=>{
         if(!cartItems[itemId]){
@@ -23,10 +24,24 @@ const StoreContextProvider = (props) =>{
     const deleteFromCart = (itemId) => {
         setCartItems((prev)=>({...prev,[itemId]:prev[itemId]*0}));
       };
-      
+    
+    const dMode=()=>{
+
+        if (darkMode){
+            setDarkMode(false);
+            console.log(darkMode)
+        }
+        else {
+            setDarkMode(true);
+            console.log(darkMode);
+            
+        }
+        
+    }  
+
 
     useEffect(()=>{
-        console.log(cartItems);
+        console.log(cartItems);  
     },[cartItems])
 
     const contextValue={
@@ -35,7 +50,8 @@ const StoreContextProvider = (props) =>{
         setCartItems,
         addToCart,
         removeFromCart,
-        deleteFromCart
+        deleteFromCart,
+        dMode
         
     }
 

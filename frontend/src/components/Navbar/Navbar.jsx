@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './Navbar.css'
 import { assets } from '../../assets/assets'
+import { StoreContext } from '../../context/StoreContext';
 
 function Navbar() {
 
+  const {dMode}=useContext(StoreContext);
   const [menu,setMenu]=useState("home");
 
   return (
@@ -21,6 +23,10 @@ function Navbar() {
           <img src={assets.basket_icon} alt="" />
           <div className='dot'></div>
         </div>
+        <label>
+            <input onClick={()=>dMode()} type="checkbox" />
+            <span class="fill"></span>
+        </label>
         <button>Sign In</button>
       </div>
     </div>
