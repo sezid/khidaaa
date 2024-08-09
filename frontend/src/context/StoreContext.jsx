@@ -7,6 +7,8 @@ const StoreContextProvider = (props) =>{
 
     const [cartItems, setCartItems]=useState({});
     const [darkMode,setDarkMode]=useState(false);
+    const [dotShow, setDotShow]=useState('no-dot');
+
 
     const addToCart=(itemId)=>{
         if(!cartItems[itemId]){
@@ -15,6 +17,7 @@ const StoreContextProvider = (props) =>{
         else{
             setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}))
         }
+        setDotShow('dot')
     }
 
     const removeFromCart=(itemId)=>{
@@ -23,6 +26,7 @@ const StoreContextProvider = (props) =>{
 
     const deleteFromCart = (itemId) => {
         setCartItems((prev)=>({...prev,[itemId]:prev[itemId]*0}));
+        setDotShow('no-dot')
       };
     
     const dMode=()=>{
@@ -47,6 +51,8 @@ const StoreContextProvider = (props) =>{
     const contextValue={
         food_list,
         cartItems,
+        dotShow,
+        darkMode,
         setCartItems,
         addToCart,
         removeFromCart,

@@ -6,6 +6,11 @@
     
 }
 
+
+
+
+
+
 .navbar .logo {
     display: flex;
     align-items: center;
@@ -20,6 +25,9 @@
     color:#49557e;
     font-size: 18px;
 }
+
+
+
 .navbar-right{
     display: flex;
     align-items: center;
@@ -39,6 +47,20 @@
     
 }
 
+.search-navbar button{
+    background:transparant;
+    font-size: 16px;
+    color: #49557e;
+    border: 1px solid tomato;
+    padding: 10px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.2s;
+    
+}
+
+
+
 .navbar button:hover{
     background-color: #fff4f2;
 }
@@ -52,7 +74,10 @@
 
 .navbar-search-icon{
     position: relative;
+    cursor: pointer;
 }
+
+
 
 
 
@@ -71,6 +96,20 @@
     top: -30px;
     right: -30px;
 }
+
+
+.navbar-basket-icon .no-dot{
+    position: relative;
+    width: 10px;
+    height: 10px;
+    background-color: tomato;
+    border-radius: 50%;
+    top: -30px;
+    right: -30px;
+    display: none;
+}
+
+
 
 
 label {
@@ -155,3 +194,7 @@ label {
     }
     
 }
+
+
+
+

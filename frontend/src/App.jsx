@@ -1,16 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Navbar from './components/Navbar/Navbar'
 import { Routes, Route } from 'react-router-dom'
 import Home from './pages/Home/Home'
 import Cart from './pages/Cart/Cart'
 import PlaceOrder from './pages/PlaceOrder/PlaceOrder'
 import Footer from './components/Footer/Footer'
-
+import { StoreContext } from './context/StoreContext'
 
 const App = () => {
+
+  const {dMode}=useContext(StoreContext);
+
   return (
     <>
-    <div className='app'>
+    <div className={dMode===true?"dark-mode":"app"}>
       
       <Navbar/>
       <Routes>
