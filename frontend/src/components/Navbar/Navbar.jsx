@@ -3,7 +3,7 @@ import './Navbar.css'
 import { assets } from '../../assets/assets'
 import { StoreContext } from '../../context/StoreContext';
 
-function Navbar() {
+const Navbar=({setShowLogin}) =>{
 
   const {dMode,dotShow}=useContext(StoreContext);
   const [menu,setMenu]=useState("home");
@@ -22,7 +22,7 @@ function Navbar() {
       <img src={assets.dish} alt="" className="logo" />
       <ul className="navbar-menu">
         <li onMouseEnter={()=>setMenu("home")} className={menu==="home"?"active":""}>Home</li>
-        <li onMouseEnter={()=>setMenu("menu")} className={menu==="menu"?"active":""}>Menu</li>
+        <li onMouseEnter={()=>setMenu("menu")} className={menu==="menu"?"active":""} href="#menu">Menu</li>
         <li onMouseEnter={()=>setMenu("mobile-app")} className={menu==="mobile-app"?"active":""}>Mobile App</li>
         <li onMouseEnter={()=>setMenu("contact-us")} className={menu==="contact-us"?"active":""}>Contact Us</li>
       </ul>
@@ -36,11 +36,12 @@ function Navbar() {
           <img src={assets.basket_icon} alt="" />
           <div className={dotShow==="dot"?"dot":""}></div>
         </div>
+        
+        <button onClick={()=>setShowLogin(true)}>Sign In</button>
         <label>
             <input onClick={()=>dMode()} type="checkbox" />
             <span class="fill"></span>
         </label>
-        <button>Sign In</button>
       </div>
     </div>
   )
