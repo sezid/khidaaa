@@ -26,9 +26,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 155px;
     color: black;
     margin-bottom: 10px;
+}
+
+.login-popup-title h2{
+    padding-left: 150px;
 }
 
 .login-popup-title img{
@@ -61,18 +64,23 @@
 }
 
 .login-popup-condition {
-    padding-left: 20px;
+    /* padding-left: 20px; */
     display: flex;
     align-items: center;
-    gap: 10px; 
+    /* gap: 10px;  */
+    justify-content: space-between;
+}
+
+.login-popup-condition p{
+    text-align: center;
 }
 
 
-
-
 .other{
+    margin: 0 auto;
     margin-top: 10px;
     padding-left: 20px;
+    text-align: center;
 }
 
 .other span{
