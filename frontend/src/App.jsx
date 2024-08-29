@@ -8,6 +8,7 @@ import Footer from './components/Footer/Footer'
 import { StoreContext } from './context/StoreContext'
 import LoginPopup from './components/LoginPopup/LoginPopup'
 
+
 const App = () => {
 
   const {dMode}=useContext(StoreContext);

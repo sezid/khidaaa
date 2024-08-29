@@ -19,6 +19,15 @@
     animation: fadeIn 2.5s;
 }
 
+.header-contents button{
+    cursor: pointer;
+}
+
+.header-contents button:hover{
+    background-color: #e2dddd;
+}
+
+
 .header-contents h2{
     font-weight: 500;
     color: white;

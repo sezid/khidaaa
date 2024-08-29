@@ -4,6 +4,7 @@ import { assets } from '../../assets/assets'
 import { StoreContext } from '../../context/StoreContext';
 import { Link } from 'react-router-dom';
 
+
 const Navbar=({setShowLogin}) =>{
 
   const {dMode, getTotalCartAmount}=useContext(StoreContext);
@@ -20,16 +21,18 @@ const Navbar=({setShowLogin}) =>{
     
     <div className='navbar'>
       
+      
+
       <Link to="/"><img src={assets.dish} alt="" className="logo" /></Link>
       <ul className="navbar-menu">
         <Link to="/"><li onMouseEnter={()=>setMenu("home")} className={menu==="home"?"active":""}>Home</li></Link>
-        <li onMouseEnter={()=>setMenu("menu")} className={menu==="menu"?"active":""} href="#menu">Menu</li>
-        <li onMouseEnter={()=>setMenu("mobile-app")} className={menu==="mobile-app"?"active":""}>Mobile App</li>
-        <li onMouseEnter={()=>setMenu("contact-us")} className={menu==="contact-us"?"active":""}>Contact Us</li>
+        <a href="#menu"><li onMouseEnter={() => setMenu("menu")} className={menu === "menu" ? "active" : ""}>Menu</li></a>
+        <a href="#app-download"><li onMouseEnter={()=>setMenu("mobile-app")} className={menu==="mobile-app"?"active":""}>Mobile App</li></a>
+        <a href="#footer"><li onMouseEnter={()=>setMenu("contact-us")} className={menu==="contact-us"?"active":""}>Contact Us</li></a>
       </ul>
       <div className="navbar-right">
         <div className="search-bar">
-        <img className="navbar-search-icon" onClick={toggleSearchBar} src={assets.search_icon} alt="" /> {/*dummy placeholder function */}
+        <img className="navbar-search-icon" onClick={toggleSearchBar} src={assets.search_icon} alt="" /> 
 
         
         </div>
